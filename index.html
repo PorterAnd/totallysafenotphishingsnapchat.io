@@ -32,12 +32,18 @@
   <script>
     document.getElementById('demoForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      // Record only a click event for analytics (no sensitive data)
-      console.log('DEMO: form submitted by', document.getElementById('user').value ? 'user entered' : 'no username');
-      alert('Demo complete. No credentials were collected. Show this slide next to the demo to explain red flags.');
-      // Optional: show a results screen instead of redirecting
-      document.body.innerHTML = '<div style="font-family:Inter,system-ui;display:flex;align-items:center;justify-content:center;height:100vh;"><div style="text-align:center"><h2>Demo complete</h2><p>Results are anonymous and only measure clicks.</p></div></div>';
-    }, {passive:false});
+      const username = document.getElementById('user').value;
+      const password = document.getElementById('pass').value;
+
+      alert(
+        `Demo complete! You entered:\nUsername: ${username}\nPassword: ${password}\n\n` +
+        `If this were a real phishing attempt, your information could have been stolen.`
+      );
+
+      // Clear fields
+      document.getElementById('user').value = '';
+      document.getElementById('pass').value = '';
+    });
   </script>
 </body>
 </html>
