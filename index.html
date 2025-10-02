@@ -4,73 +4,83 @@
   <meta charset="utf-8" />
   <title>NOT SNAPCHAT</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* Updated CSS */
-body {
-  font-family: 'Public Sans', sans-serif;
-  background: #ffff00;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
-}
+    body {
+      font-family: 'Public Sans', sans-serif;
+      background: #ffff00;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
 
-.card {
-  width: 360px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(20, 20, 40, 0.08);
-}
+    .card {
+      width: 360px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(20, 20, 40, 0.08);
+      text-align: center;
+    }
 
-.banner {
-  background: #ffe9e9;
-  color: #8a1f1f;
-  padding: 6px 10px;
-  border-radius: 8px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  text-align: center;
-}
+    .banner {
+      background: #ffe9e9;
+      color: #8a1f1f;
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
 
-label {
-  display: block;
-  margin: 10px 0 6px;
-  font-size: 13px;
-  color: #333;
-}
+    label {
+      display: block;
+      margin: 10px 0 6px;
+      font-size: 13px;
+      color: #333;
+      text-align: left;
+    }
 
-input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #e0e0e6;
-  border-radius: 8px;
-}
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #e0e0e6;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
 
-button {
-  width: 100%;
-  margin-top: 14px;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  background: #4b6cff;
-  color: #fff;
-  font-weight: 600;
-}
+    button {
+      width: 100%;
+      margin-top: 14px;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      background: #4b6cff;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
 
-.note {
-  font-size: 12px;
-  color: #666;
-  margin-top: 10px;
-  text-align: center;
-}
+    .note {
+      font-size: 12px;
+      color: #666;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    img.logo {
+      max-width: 120px;
+      margin-bottom: 12px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
 </head>
 <body>
-  
-<img src="logo.png" alt="NOT Snapchat Logo">
+  <div class="card" role="main">
+    <img class="logo" src="logo.png" alt="NOT Snapchat Logo">
 
     <form id="demoForm">
       <label for="user">Username or Email</label>
@@ -78,7 +88,6 @@ button {
       <label for="pass">Password</label>
       <input id="pass" name="pass" type="password" autocomplete="off" />
       <button type="submit">Sign In</button>
-      <div class="note"></div>
     </form>
   </div>
 
@@ -90,10 +99,9 @@ button {
 
       alert(
         `You entered:\nUsername: ${username}\nPassword: ${password}\n\n` +
-        `If this were a real phishing attempt, your information could have been stolen if i wasn't so benevolent`
+        `If this were a real phishing attempt, your information could have been stolen.`
       );
 
-      // Clear fields
       document.getElementById('user').value = '';
       document.getElementById('pass').value = '';
     });
